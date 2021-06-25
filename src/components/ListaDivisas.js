@@ -31,7 +31,7 @@ class ListaDivisas extends React.Component {
                 key={divisa}
                 nombre={divisa}
                 valor={this.state.divisas[divisa]}
-                valorMenos1={(1 / this.state.divisas[divisa]).toFixed(4)}
+                valorMenos={(1 / this.state.divisas[divisa]).toFixed(4)}
             />
         });
     }
