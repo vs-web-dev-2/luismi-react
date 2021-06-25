@@ -1,4 +1,7 @@
 import React from 'react';
+import './ListaDivisas.css'
+import Divisa from './Divisa';
+
 
 class ListaDivisas extends React.Component {
     constructor(props) {
@@ -24,14 +27,19 @@ class ListaDivisas extends React.Component {
 
     renderDivisas() {
         return Object.keys(this.state.divisas).map((divisa) => {
-            return <li key={divisa}>{divisa}: {this.state.divisas[divisa]}</li>
+            return <Divisa
+                key={divisa}
+                nombre={divisa}
+                valor={this.state.divisas[divisa]}
+                valorMenos1={(1 / this.state.divisas[divisa]).toFixed(4)}
+            />
         });
     }
 
     render() {
         const divisas = this.renderDivisas();
         return (
-            <div>
+            <div className="lista-divisas">
                 <h2>{this.props.frase}</h2>
                 <p>{divisas}</p>
             </div>

@@ -1,0 +1,8 @@
+.lista-divisas ul{
+    margin: 0;
+    padding: 0;
+}
+
+.lista-divisas li{
+    list-style: none;
+}
